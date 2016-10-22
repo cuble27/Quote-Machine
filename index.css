@@ -1,0 +1,42 @@
+*{
+   font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+   background: rgb(51, 191, 204);
+}
+
+.jumbotron{
+   margin-top: 25vh;
+   background: white !important;
+   display: flex;
+   justify-content: center;
+}
+
+.quoteDiv{
+   width: 700px;
+   display: flex;
+   flex-direction: column;
+}
+
+.buttons{
+   display: flex;
+   justify-content: space-between;
+   margin: 20px 50px 0 50px;
+}
+
+button{
+   color: rgb(51, 51, 51);
+   background: none;
+   border: 0;
+   border-radius: 2px;
+}
+
+.quote{
+   text-align: center;
+}
+
+.author{
+   align-self: flex-end;
+   margin-right: 80px;
+}
