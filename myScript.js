@@ -25,8 +25,8 @@ function newQuote() {
          $('.quote, .author, .newQuote').fadeOut('400', function() {
             $('.loading').fadeOut('400');
 
-            $('.quote').html('<p>'+theQuote+'</p>');
-            $('.author').html('<p>-  '+theAuthor+'</p>');
+            $('.quote').html(theQuote);
+            $('.author').html('-  '+theAuthor);
 
             $('.newQuote').removeClass('spin');
             $('.loading').removeClass('pulse');
@@ -36,7 +36,9 @@ function newQuote() {
                color: actualColor
             }, 400);
             $('.quote, .author, .newQuote').fadeIn('400');
+            shareQuote();
          });
+
             // SECOND PROTOTYPE OF ANIMATION
             // $('.quoteDiv').animate({height:"toggle"}, 600, function(){
             //    $('.quote').html('<p>'+theQuote+'</p>');
@@ -52,3 +54,14 @@ function newQuote() {
 $('.newQuote').click(newQuote);
 
 $(document).ready(newQuote());
+
+//The quotes will most likely be too long to tweet, so don't blame the stamp, I made it shorter!
+function shareQuote(){
+   var author=document.getElementsByClassName('author')[0].innerText;
+   var quote=document.getElementsByClassName('quote')[0].innerText;
+   var stamp="https://goo.gl/fWluYX";
+
+   var generatedURL= "https://twitter.com/intent/tweet?text=\""+quote+"\""+author+"%0A"+stamp;
+
+   document.getElementById('shareURL').setAttribute('href', generatedURL);
+}
