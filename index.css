@@ -3,12 +3,13 @@
 }
 
 body{
-   background: rgb(51, 191, 204);
+   background-color: rgb(54, 54, 54);
+   color: rgb(54, 54, 54);
 }
 
 .jumbotron{
    margin-top: 25vh;
-   background: white !important;
+   background: white ;
    display: flex;
    justify-content: center;
    /*height: inherit;*/
@@ -23,34 +24,76 @@ body{
 .buttons{
    display: flex;
    justify-content: space-between;
-   margin: 20px 50px 0 50px;
+   margin: 10px 10px 0 10px;
+}
+
+.buttons a{
+   color: inherit;
+}
+
+.buttons a:hover{
+   color: #1b95e0;
 }
 
 button{
-   color: rgb(51, 51, 51);
-   background: none;
+   background: 0;
    border: 0;
-   border-radius: 2px;
 }
 
-.quote{
+button:active, button:focus{
+   outline: 0;
+}
+
+.loading{
+   display: none;
+   font-size: 17px !important;
+}
+
+.quote p{
    text-align: center;
+   font-size: 25px;
+   margin: 0 2px;
 }
 
 .author{
    align-self: flex-end;
    margin-right: 80px;
-   /*border-spacing: 0;*/
+   margin-top: 10px;
+}
+.author p{
+   font-size: 16px;
+   font-weight: lighter;
 }
 
 .spin{
    animation-name: spin;
-   animation-duration: 4000ms;
+   animation-duration: 1300ms;
+   animation-iteration-count: infinite;
+   animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+
+@keyframes spin {
+    from { transform:rotate(now); }
+    to { transform:rotate(-360deg); }
+}
+
+.pulse{
+   animation-name: pulse;
+   animation-duration: 1300ms;
    animation-iteration-count: infinite;
    animation-timing-function: linear;
 }
 
-@keyframes spin {
-    from { transform:rotate(0deg); }
-    to { transform:rotate(-360deg); }
+@keyframes pulse {
+   0% { opacity: 1; }
+   50% { opacity: 0; }
+   100% { opacity: 1; }
 }
+
+/*.copyright{
+   margin-top: -20px;
+   font-size: 11px;
+   color:white !important;
+   text-align: center; }
+.copyright a{ font-weight: bold; color: white; }
+.copyright a:hover{ text-decoration: none; }*/
